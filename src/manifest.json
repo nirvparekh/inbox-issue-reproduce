@@ -1,0 +1,58 @@
+{
+  "version": "1.0.0",
+  "name": "Inbox sdk reproduce issue",
+  "short_name": "inboxsdk",
+  "description": "",
+  "manifest_version": 2,
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "img/logos/16.png",
+      "32": "img/logos/32.png",
+      "48": "img/logos/48.png",
+      "128": "img/logos/128.png"
+    }
+  },
+  "icons": {
+    "16": "img/logos/16.png",
+    "32": "img/logos/32.png",
+    "48": "img/logos/48.png",
+    "128": "img/logos/128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*",
+        "<all_urls>"
+      ],
+      "css": [
+        "content.styles.css"
+      ],
+      "js": [
+        "pageWorld.js"
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+    "content.styles.css",
+    "img/*.png",
+    "pageWorld.js"
+  ],
+  "permissions": [
+    "contextMenus",
+    "tabs",
+    "activeTab",
+    "storage",
+    "http://*/*",
+    "https://*/*",
+    "https://mail.google.com/*",
+    "https://inbox.google.com/*"
+  ],
+  "content_security_policy": "default-src 'self'; script-src 'self' 'sha256-Fer8b4ZA33Irok7kn5yEy00URn95Dfsn7LlXPyiIUdc=' 'sha256-I/pxsHGCObZZ2/Z9ss/y1oClLLVXaV1bKsIF6qlgdlA=' http://localhost:3001; style-src * 'unsafe-inline' 'self' blob:; font-src 'self'; img-src 'self' * data: blob: filesystem:; media-src 'self'; connect-src 'self' ws://localhost:3001/ http://localhost:3001/"
+}

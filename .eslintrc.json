@@ -1,0 +1,29 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "env": {
+    "commonjs": true,
+    "node": true,
+    "browser": true,
+    "es6": true,
+    "jest": true,
+    "webextensions": true
+  },
+  "extends": ["eslint:recommended", "plugin:react/recommended"],
+  "ignorePatterns": ["node_modules/"],
+  "rules": {
+    "no-unreachable": "off",
+    "react/prop-types": "off",
+    "no-unused-vars": "warn",
+    "no-empty": "warn",
+    "no-extra-boolean-cast": "off",
+    "no-async-promise-executor": "off",
+    "flowtype/require-valid-file-annotation": "off"
+  },
+  "settings": {
+    "react": {
+      "version": "latest" // "detect" automatically picks the version you have installed.
+    }
+  },
+  "plugins": ["react", "import", "react-hooks"],
+  "globals": {}
+}
